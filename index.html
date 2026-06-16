@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agro House Plato | ხილი, ბოსტნეული და ყოველდღიური პროდუქტები</title>
+  <meta name="description" content="Agro House Plato — ახალი ხილი, ბოსტნეული, მწვანილი, რძის ნაწარმი, სუნელები და ყოველდღიური პროდუქტები ნუცუბიძის პლატოზე." />
+  <meta property="og:title" content="Agro House Plato" />
+  <meta property="og:description" content="ახალი ხილი, ბოსტნეული და ყოველდღიური პროდუქტები ნუცუბიძის პლატოზე." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --green:#3a4c1c;          /* ბრენდის ზუსტი მწვანე (ლოგოდან) */
+      --green-dark:#2c3a14;
+      --green-mid:#586c34;
+      --green-soft:#f4f7ef;
+      --green-soft-2:#eaf1e0;
+      --line:#e3ead7;
+      --text:#25301f;
+      --muted:#6c7563;
+      --white:#ffffff;
+      --shadow:0 20px 55px rgba(58,76,28,.12);
+      --shadow-sm:0 8px 22px rgba(58,76,28,.06);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans Georgian",system-ui,-apple-system,"Segoe UI",sans-serif;
+      color:var(--text);background:#fff;line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block}
+    .wrap{width:min(1120px,92vw);margin:auto}
+
+    /* ---------- Header ---------- */
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--green);letter-spacing:.2px;white-space:nowrap}
+    .brand img{width:46px;height:46px;object-fit:contain;border-radius:50%}
+    .brand span{font-size:17px}
+    .navlinks{display:flex;gap:28px;align-items:center;font-size:15px;color:var(--muted);font-weight:500}
+    .navlinks a{position:relative;padding:4px 0}
+    .navlinks a:hover{color:var(--green)}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;font-size:14px}
+    .nav-cta:hover{background:var(--green-dark)}
+
+    /* ---------- Hero ---------- */
+    .hero{padding:64px 0 56px;background:radial-gradient(120% 90% at 50% -10%,#fff 0%,var(--green-soft) 55%,var(--green-soft-2) 100%);text-align:center}
+    .logo-mark{
+      width:clamp(190px,32vw,260px);height:clamp(190px,32vw,260px);
+      margin:0 auto 30px;border-radius:50%;background:#fff;
+      display:flex;align-items:center;justify-content:center;padding:18px;
+      box-shadow:var(--shadow);
+      outline:1px solid rgba(58,76,28,.10);outline-offset:14px;
+    }
+    .logo-mark img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+    h1{font-size:clamp(30px,4.6vw,50px);line-height:1.08;margin:0 auto 16px;color:var(--green);letter-spacing:-1px;max-width:14ch;font-weight:800}
+    .lead{font-size:clamp(17px,2vw,21px);margin:0 auto 30px;color:#3c4a36;max-width:620px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;border:1.5px solid transparent;transition:.18s ease;line-height:1.2;cursor:pointer}
+    .btn svg{width:20px;height:20px}
+    .btn.primary{background:var(--green);color:#fff;box-shadow:0 12px 28px rgba(58,76,28,.22)}
+    .btn.primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+    .btn.ghost{background:#fff;color:var(--green);border-color:var(--line)}
+    .btn.ghost:hover{border-color:#bcd0a6;transform:translateY(-2px)}
+
+    /* ---------- Sections ---------- */
+    section{padding:62px 0}
+    .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-mid);margin:0 0 8px}
+    .section-title{font-size:clamp(26px,3.6vw,38px);line-height:1.12;margin:0 0 12px;color:var(--green);letter-spacing:-.5px;font-weight:800}
+    .section-text{margin:0 0 30px;color:var(--muted);font-size:17px;max-width:640px}
+
+    /* ---------- Service facts ---------- */
+    .facts{padding:42px 0 6px}
+    .facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .fact{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+    .fact .fi{width:46px;height:46px;flex:0 0 46px;border-radius:14px;background:var(--green-soft-2);display:flex;align-items:center;justify-content:center;font-size:22px}
+    .fact .ft{display:flex;flex-direction:column;gap:2px}
+    .fact .fk{font-size:13px;color:var(--muted)}
+    .fact .fv{font-size:16px;font-weight:700;color:var(--green);line-height:1.25}
+
+    /* ---------- Accordion ---------- */
+    .accordion{display:grid;gap:12px}
+    details{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden;transition:border-color .18s ease}
+    details[open]{border-color:#cdddba}
+    summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:12px;font-size:17px}
+    summary::-webkit-details-marker{display:none}
+    summary .chev{margin-left:auto;font-size:22px;line-height:1;color:var(--green-mid);transition:transform .2s ease}
+    details[open] summary .chev{transform:rotate(45deg)}
+    .items{padding:4px 22px 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 28px;color:#33402b}
+    .items span{padding:8px 0;border-bottom:1px dashed #e6efe1;position:relative;padding-left:18px;font-size:15.5px}
+    .items span:before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:#86a96f}
+
+    /* ---------- Order info ---------- */
+    .info{background:var(--green-soft)}
+    .info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px}
+    .info-card p{margin:0 0 16px;font-size:17.5px}.info-card p:last-child{margin-bottom:0}
+
+    /* ---------- Contact ---------- */
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .contact-card{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fff;box-shadow:var(--shadow-sm);display:block;min-height:128px;transition:.18s ease}
+    .contact-card:hover{border-color:#bcd0a6;transform:translateY(-2px)}
+    .contact-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .icon{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px;font-size:20px}
+    .label{color:var(--muted);font-size:14px}
+    .value{font-weight:700;color:var(--green);font-size:17px;line-height:1.35}
+    .small{font-size:14.5px;color:#4a5544;margin-top:6px}
+
+    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
+
+    a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid #9bbd7a;outline-offset:3px;border-radius:8px}
+
+    @media(max-width:860px){
+      .nav{height:64px}.brand img{width:40px;height:40px}.brand span{font-size:15px}
+      .navlinks{display:none}.nav-cta{padding:9px 15px}
+      .hero{padding:40px 0 38px}
+      .contact-grid{grid-template-columns:1fr}
+      .facts-grid{grid-template-columns:1fr}
+      .items{grid-template-columns:1fr}
+      .actions .btn{flex:1 1 auto}
+      section{padding:46px 0}
+      .info-card{padding:26px}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body id="top">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><img src="logo.png" alt="Agro House Plato ლოგო"><span>Agro House Plato</span></a>
+      <nav class="navlinks">
+        <a href="#products">პროდუქცია</a>
+        <a href="#order">ფასები და შეკვეთა</a>
+        <a href="#contact">კონტაქტი</a>
+      </nav>
+      <a class="nav-cta" href="https://www.facebook.com/AgroHousePlato/" target="_blank" rel="noopener">Messenger</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="logo-mark"><img src="logo.png" alt="Agro House Plato — ხილი და ბოსტნეული" /></div>
+        <h1>ახალი ხილი, ბოსტნეული და ყოველდღიური პროდუქტი</h1>
+        <p class="lead">სეზონური სიახლე ნუცუბიძის პლატოზე — შეარჩიეთ, მოგვწერეთ და მიიღეთ შეკვეთა.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.facebook.com/AgroHousePlato/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.15 2 11.27c0 2.92 1.45 5.52 3.72 7.23V22l3.4-1.87c.91.25 1.87.39 2.88.39 5.5 0 10-4.15 10-9.25S17.5 2 12 2Zm1.01 12.46-2.55-2.72-4.97 2.72L11 8.6l2.61 2.72L18.53 8.6l-5.52 5.86Z"/></svg>
+            მოგვწერეთ Messenger-ში
+          </a>
+          <a class="btn ghost" href="https://wa.me/995557004541" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.6 14.1c-.24.66-1.4 1.27-1.92 1.35-.49.07-1.1.1-1.78-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.7-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.24-.26.53-.33.7-.33h.5c.16 0 .38-.03.59.45.21.49.72 1.7.78 1.82.06.12.1.26.02.42-.09.16-.13.26-.26.4l-.39.46c-.13.13-.27.27-.12.53.15.26.66 1.09 1.42 1.77.98.87 1.8 1.14 2.06 1.27.26.13.41.11.56-.07.16-.18.65-.76.82-1.02.17-.26.34-.21.57-.13.24.09 1.5.71 1.76.84.26.13.43.19.49.3.06.11.06.64-.18 1.3Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="მომსახურების ინფორმაცია">
+      <div class="wrap facts-grid">
+        <div class="fact"><span class="fi" aria-hidden="true">📍</span><span class="ft"><span class="fk">მიწოდების ზონა</span><span class="fv">ვაკე – საბურთალო</span></span></div>
+        <div class="fact"><span class="fi" aria-hidden="true">🕘</span><span class="ft"><span class="fk">სამუშაო საათები</span><span class="fv">ყოველდღე 09:00 – 21:00</span></span></div>
+        <div class="fact"><span class="fi" aria-hidden="true">🛒</span><span class="ft"><span class="fk">მინიმალური შეკვეთა</span><span class="fv">25 ₾</span></span></div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <p class="eyebrow">ასორტიმენტი</p>
+        <h2 class="section-title">ჩვენი პროდუქცია</h2>
+        <p class="section-text">კატეგორიის გასახსნელად დააჭირეთ შესაბამის ბლოკს.</p>
+        <div class="accordion">
+          <details open><summary>🥬 მწვანილი<span class="chev">+</span></summary><div class="items"><span>კამა</span><span>მწვანე ხახვი</span><span>ოხრახუში</span><span>პიტნა</span><span>ქინძი</span><span>რეჰანი</span></div></details>
+          <details><summary>🍅 ბოსტნეული<span class="chev">+</span></summary><div class="items"><span>ახალი კარტოფილი</span><span>ახალი კარტოფილი გასარეცხი</span><span>ბადრიჯანი</span><span>ბოლოკი</span><span>ბროკოლი</span><span>ბულგარული მწვანე</span><span>ბულგარული წითელი</span><span>ვარდისფერი პომიდორი</span><span>კარტოფილი</span><span>კიტრი ხორკლიანი</span><span>კომბოსტო</span><span>ნიორი</span><span>პრიალა კიტრი</span><span>სალათი აისბერგი</span><span>სალათის ფურცელი</span><span>სტაფილო</span><span>ქამა სოკო</span><span>ყაბაყი</span><span>ყვავილოვანი კომბოსტო</span><span>ყვითელი ბულგარული</span><span>ყვითელი ჭყინტი ლობიო</span><span>მწვანე ჭყინტი ლობიო</span><span>ჩერი პომიდორი</span><span>ცხარე წიწაკა</span><span>ჭარხალი</span><span>შუშა კიტრი</span><span>ხახვი</span><span>ჯინჯერი</span></div></details>
+          <details><summary>🍓 ხილი და კენკრა<span class="chev">+</span></summary><div class="items"><span>ავოკადო</span><span>ალუბალი</span><span>ალუჩა მსხვილი</span><span>ალუჩა საშუალო</span><span>ატამი</span><span>ბანანი</span><span>ბუშმალა</span><span>გარგარი</span><span>გოგრა ბალი</span><span>ვაშლი გოლდენი</span><span>ვაშლი ფუჯი</span><span>ვაშლატამა</span><span>კივი</span><span>მარწყვი</span><span>მოცვი</span><span>ნესვი</span><span>საზამთრო</span><span>ფორთოხალი</span><span>მწვანე ვაშლი გრანი სმიტი</span></div></details>
+          <details><summary>🧂 სუნელები<span class="chev">+</span></summary><div class="items"><span>დაღერღილი წიწაკა</span><span>ძირა</span><span>ქონდარი</span><span>ორეგანო</span><span>პაპრიკა</span><span>სვანური მარილი</span><span>უცხო სუნელი</span><span>ქინძი</span><span>ხარჩოს სუნელი</span><span>შავი პილპილი</span><span>წითელი წიწაკა</span><span>ყვითელი ყვავილი</span></div></details>
+          <details><summary>🥜 თხილეული, ჩირი და მარცვლეული<span class="chev">+</span></summary><div class="items"><span>გარგლის ჩირი</span><span>გოგრის გული</span><span>თხილი</span><span>ლობიო გურულა</span><span>ლობიო მინდვრის ბათუმელა</span><span>ლობიო მინდვრის წითელი</span><span>მზესუმზირა</span><span>მზესუმზირა გარჩეული</span><span>მჭადის ფქვილი</span><span>ნიგოზი გარჩეული</span><span>ოსპი</span><span>სელი</span><span>სეზამის მარცვლები</span><span>ქიშმიში შავი / თეთრი</span><span>ჩია</span><span>ხორბალი</span><span>ღერღილი</span></div></details>
+          <details><summary>🥛 რძის ნაწარმი და კვერცხი<span class="chev">+</span></summary><div class="items"><span>არაჟანი</span><span>კვერცხი თელეთის</span><span>მაწონი</span><span>ნადუღი</span><span>რძე</span><span>სულგუნი</span><span>ქარხნის ყველი</span><span>ხაჭო</span><span>შებოლილი სულგუნი</span></div></details>
+          <details><summary>🍗 ხორცი და ქათამი<span class="chev">+</span></summary><div class="items"><span>ქათამი</span><span>ქათმის ფილე</span><span>ქათმის ფრთები</span></div></details>
+          <details><summary>🥫 სოუსები და დამატებითი პროდუქტები<span class="chev">+</span></summary><div class="items"><span>აჯიკა</span><span>თაფლი</span><span>კახური ზეთი</span><span>საწებელი</span><span>ტყემალი</span></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="info" id="order">
+      <div class="wrap">
+        <div class="info-card">
+          <p class="eyebrow">ფასები და შეკვეთა</p>
+          <h2 class="section-title">ფასებისა და შეკვეთის შესახებ</h2>
+          <p>პროდუქციის ფასები ვებსაიტზე მითითებული არ არის, რადგან ხილის, ბოსტნეულისა და სხვა პროდუქციის ფასები სეზონისა და ყოველდღიური მოწოდების შესაბამისად იცვლება.</p>
+          <p>მიმდინარე ფასების, ასევე, ხელმისაწვდომობის გასაგებად და შეკვეთის გასაფორმებლად მოგვწერეთ Facebook Messenger-ში ან დაგვიკავშირდით ტელეფონის ნომერზე WhatsApp პლატფორმაზე.</p>
+          <p>სიამოვნებით გაგაცნობთ მიმდინარე ფასებს, დაგეხმარებით სასურველი პროდუქციის შერჩევასა და შეკვეთის გაფორმებაში. 😊</p>
+          <p style="color:var(--muted);font-size:15.5px;margin-top:22px;border-top:1px solid var(--line);padding-top:18px">მიწოდება — ვაკე-საბურთალოს ზონაში, ყოველდღე 09:00–21:00. მინიმალური შეკვეთა — 25 ₾.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="eyebrow">დაგვიკავშირდით</p>
+        <h2 class="section-title">კონტაქტი</h2>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://wa.me/995557004541" target="_blank" rel="noopener">
+            <div class="contact-head">
+              <span class="icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.2 18.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.8.6.8.2 1.4.2 2 0 .6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4Z" fill="white"/><path d="M16 6.3a9.6 9.6 0 0 0-8.2 14.6L6.8 25l4.2-1.1A9.6 9.6 0 1 0 16 6.3Zm0 17.2c-1.6 0-3.1-.5-4.4-1.4l-.3-.2-2.5.7.7-2.4-.2-.3A7.6 7.6 0 1 1 16 23.5Z" fill="white"/></svg>
+              </span>
+              <div class="label">WhatsApp</div>
+            </div>
+            <div class="value">557 00 45 41</div>
+            <div class="small">მოგვწერეთ ან დაგვიკავშირდით</div>
+          </a>
+          <a class="contact-card" href="https://www.facebook.com/AgroHousePlato/" target="_blank" rel="noopener">
+            <div class="contact-head"><span class="icon" aria-hidden="true">💬</span><div class="label">Facebook Messenger</div></div>
+            <div class="value">Agro House Plato</div>
+            <div class="small">გადადით Facebook გვერდზე</div>
+          </a>
+          <a class="contact-card" href="https://maps.app.goo.gl/xR6o79XQAQzcNvjJ9" target="_blank" rel="noopener">
+            <div class="contact-head"><span class="icon" aria-hidden="true">📍</span><div class="label">მისამართი</div></div>
+            <div class="value">თბილისი, ნუცუბიძის პლატო, IV მ/რ, ლეო და ნოდარ გაბუნიების ქ. N14</div>
+            <div class="small">რუკაზე ნახვა</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© Agro House Plato — ნუცუბიძის პლატო, თბილისი</div></footer>
+</body>
+</html>
